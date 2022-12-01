@@ -102,3 +102,96 @@ int main() {
       return 1;
     }
  
+  while (3) {
+    cout << "Welcome to the bookstore! What would you like to do?";
+    cout << endl << "Menu:" << endl << endl;
+    cout << "0. Logout" << endl;
+    cout << "1. Purchase a book" << endl;
+    cout << "2. View Cart" << endl;
+    cout << "3. View Order History" << endl;
+    cout << "4. Check Out" << endl;
+    cout << "5. Edit Account" << endl;
+    cout << "6. Delete Account" << endl;
+    cin >> response;
+    cout << endl;
+      
+    if (response == "0") {
+      cout << "You have been successfully logged out!" << endl;
+      cout << "Good-bye!";
+      return 0;
+    }
+    else if (response == "1") {
+      cout << "Welcome to the bookshop! Select which genre you would like to search!" << endl << "1. Epistolary" << endl << "2. PostApocalypticFiction" << endl << "3. Novel" << endl << "4. SouthernGothic" << endl << "5. Dystopian" << endl << "6. AmericanLiterature" << endl << "7. PsychologicalHorror" << endl << "8. Remove Book" << endl;
+      string response2, response3;
+      cin >> response2;
+        
+      if (response2 == "1") {
+        string search = "Epistolary";
+        int quantity1 = 25;
+        bok.searchGenre(search);
+        cout << "Quantity in stock: " << quantity1 << endl;
+        cout << "Would you like to add this book to your cart? (y/n)" << endl;
+        cin >> response3;
+        if (response3 == "y") {
+          quantity1 --;
+          string name1 = "TheColorPurple";
+          cart.additem(ISBN);
+          cout << "Successfully added " << name1 << " to cart!" << endl;
+          cout << "Quantity remaining in stock: " << quantity1 << endl << endl;
+          continue;
+        }
+        else if (response3 == "n") {
+          continue;
+        }
+        else {
+          cout << "Not a valid response. Enter either y or n." << endl;
+          continue;
+        }
+      }
+      else if (response2 == "2") {
+        string search = "PostApocalypticFiction";
+        int quantity2 = 25;
+        bok.searchGenre(search);
+        cout << "Quantity in stock: " << quantity2 << endl;
+        cout << "Would you like to add this book to your cart? (y/n)" << endl;
+        cin >> response3;
+
+        if (response3 == "y") {
+          quantity2 --;
+          string name2 = "TheRoad";
+          cart.additem(ISBN);
+          cout << "Successfully added " << name2 << " to cart!" << endl;
+          cout << "Quantity remaining in stock: " << quantity2 << endl << endl;
+          continue;
+        }
+        else if (response3 == "n") {
+          continue;
+        }
+        else {
+          cout << "Not a valid response. Enter either y or n." << endl;
+          continue;
+        }
+      }
+      else if (response2 == "3") {
+        string search = "Novel";
+        int quantity3 = 25;
+        bok.searchGenre(search);
+        cout << "Quantity in stock: " << quantity3 << endl;
+        cout << "Would you like to add this book to your cart? (y/n)" << endl;
+        cin >> response3;
+        if (response3 == "y") {
+          quantity3 --;
+          string name3 = "Gilead";
+          cart.additem(ISBN);
+          cout << "Successfully added " << name3 << " to cart!" << endl;
+          cout << "Quantity remaining in stock: " << quantity3 << endl << endl;
+          continue;
+        }
+        else if (response3 == "n") {
+          continue;
+        }
+        else {
+          cout << "Not a valid response. Enter either y or n." << endl;
+          continue;
+        }
+      }
