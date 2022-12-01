@@ -310,7 +310,7 @@ else if (response2 == "4") {
     }
     else if (response == "3") {
       cout << "Your order history: " << endl;
-      cout << "1984 by GeorgeOrwell for $7.99" << endl <<  "TheColorPurple by AliceWalker for $11.89" << endl <<  "Gilead by MarilynneRobinson for $14.99" << endl <<  "Order total: $26.88" << endl << endl;
+      cout << "TheColorPurple by AliceWalker for $11.89" << endl <<  "Gilead by MarilynneRobinson for $14.99" << endl <<  "Order total: $26.88" << endl << endl;
     }
     else if (response == "4") {
       cout << "Your cart: " << endl;
