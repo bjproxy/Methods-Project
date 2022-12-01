@@ -264,3 +264,102 @@ else if (response2 == "4") {
           continue;
         }
       }
+	    
+	    else if (response2 == "7") {
+        string search = "PsychologicalHorror";
+        int quantity7 = 25;
+        bok.searchGenre(search);
+        cout << "Quantity in stock: " << quantity7 << endl;
+        cout << "Would you like to add this book to your cart? (y/n)" << endl;
+        cin >> response3;
+        if (response3 == "y") {
+          quantity7 --;
+          string name7 = "Misery";
+          cart.additem(ISBN);
+          cout << "Successfully added " << name7 << " to cart!" << endl;
+          cout << "Quantity remaining in stock: " << quantity7 << endl << endl;
+          continue;
+        }
+        else if (response3 == "n") {
+          continue;
+        }
+        else {
+          cout << "Not a valid response. Enter either y or n." << endl;
+          continue;
+        }
+      }
+      else if (response2 == "8") {
+        cout << "Which book would you like to remove? Enter book ISBN: " << endl;
+        string remove;
+        cin >> remove;
+        cout << "Successfully removed from cart!" << endl;
+        cart.removeItem(ISBN);
+      }
+      else {
+        cout << "Not a valid input" << endl;
+      }
+    }
+    else if (response == "2") {
+      //view cart
+      cout << "Your cart: " << endl;
+      string search1 = "Epistolary";
+      bok.searchGenre(search1);
+      string search2 = "Novel";
+      bok.searchGenre(search2);
+      cout << endl;
+    }
+    else if (response == "3") {
+      cout << "Your order history: " << endl;
+      cout << "1984 by GeorgeOrwell for $7.99" << endl <<  "TheColorPurple by AliceWalker for $11.89" << endl <<  "Gilead by MarilynneRobinson for $14.99" << endl <<  "Order total: $26.88" << endl << endl;
+    }
+    else if (response == "4") {
+      cout << "Your cart: " << endl;
+      string search1 = "Epistolary";
+      bok.searchGenre(search1);
+      string search2 = "Novel";
+      bok.searchGenre(search2);
+      cout << "Order total: $26.88" << endl;
+      cout << "Checking out... " << endl;
+      cout << "SUCCESS!" << endl;
+      cout << "Shopping cart cleared!" << endl;
+      cout << "Added to order history." << endl << endl;
+    }
+    else if (response == "5") {
+      cout << "0. Logout" << endl;
+      cout << "1. Shipping Address" << endl;
+      cout << "2. Payment Information" << endl;
+      cin >> response4;
+      ifstream filein("users.txt");
+      if (response4 == "1") {
+        currentUser.changeShip(oneUsers);
+        cout << "Shipping Address updated!" << endl << endl;
+      }
+      else if (response4 == "2") {
+        currentUser.changePay(oneUsers);
+        cout << "Payment Info updated!" << endl << endl;
+      }
+      else if (response4 == "0") {
+        cout << "Good-bye!";
+        return 0;
+      }
+      else {
+        cout << "Invalid menu option." << endl;
+      }
+    }
+    else if(response == "6") {
+      cout << "Enter you email to delete your account:" << endl;
+      string delemail;
+      cin >> delemail;
+      int n;
+      n = 3;
+      deleteline("users.txt", n);
+      cout << "Your account has been deleted" << endl;
+    }
+    else { 
+      cout << "Invalid input.";
+      return 1;
+    }
+  }
+  }
+  return 1;
+}
